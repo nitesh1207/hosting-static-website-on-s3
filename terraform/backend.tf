@@ -13,3 +13,12 @@ resource "aws_dynamodb_table" "terraform_lock" {
     Environment = "Dev"
   }
 }
+terraform {
+  backend "s3" {
+    bucket         = "terraform-backend-niteshstatefile"
+    key            = "static-website/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-lock-table"
+  }
+}
+
