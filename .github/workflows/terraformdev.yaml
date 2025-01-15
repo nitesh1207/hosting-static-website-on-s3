@@ -3,7 +3,8 @@ name: Terraform Plan and Apply
 on:
   push:
     branches:
-      - main 
+      - main
+      - dev
   pull_request:
     branches:
       - main
