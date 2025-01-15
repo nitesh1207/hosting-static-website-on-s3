@@ -1,14 +1,8 @@
-resource "aws_s3_bucket" "terraform_state" {
-  bucket = "your-terraform-state-bucket"
-  acl    = "private"
-
-  versioning {
-    enabled = true
-  }
+resource "aws_s3_bucket" "example" {
+  bucket = "terraform-backend-statefile"
 
   tags = {
-    Name        = "Terraform State Bucket"
-    Environment = "DevOps"
+    Name        = "My bucket"
+    Environment = "Dev"
   }
 }
-
